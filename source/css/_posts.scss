@@ -1,0 +1,19 @@
+
+#featured .post .media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#featured .post .media .media-item {
+    display: block;
+    max-width: 200px;
+    height: auto;
+}
+#posts .post .media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#posts .post .media .media-item {
+    display: block;
+    max-width: 200px;
+    height: auto;
+}
