@@ -1,0 +1,536 @@
+.site {
+/*--------------------------------------------------------------
+# Theme Light
+  --------------------------------------------------------------*/
+	&.theme-light {
+		background: $theme-light__background-body;
+		color: $theme-light__text-main;
+
+		.site-header {
+			background-color: $theme-light__background-header;
+			border-right: 2px solid rgba(0, 0, 0, 0.1);
+		}
+		button, input, select, optgroup, textarea {
+			color: $theme-light__text-main;
+		}
+	}
+
+/*--------------------------------------------------------------
+# Theme Gradients & Colors
+  --------------------------------------------------------------*/
+	/*----------------------------------------------------------
+	# Gradients 1
+	  ----------------------------------------------------------*/
+	&.theme-gradient-1 {
+		p a {
+			color: $theme-gradient-1_red;
+
+			&:hover {
+				color: $theme-gradient-1_orange;
+			}
+			&:visited {
+				color: $theme-gradient-1_orange;
+
+				&:hover {
+					color: $theme-gradient-1_red;
+				}
+			}
+		}
+		.su-button.circle-btn-default {
+			background: $theme-gradient-1 !important;
+
+			span {
+				color: $theme-gradient-1_red !important;
+
+				svg {
+					color:$theme-gradient-1_orange !important;
+				}
+			}
+			&:hover {
+				span {
+					color:$theme-gradient-1_orange !important;
+
+					svg {
+						color: $theme-gradient-1_red !important;
+					}
+				}
+			}
+		}
+		.main-navigation ul li ul li {
+			border-left: 4px solid $theme-gradient-1_orange;
+
+			&:hover {
+				border-color: $theme-gradient-1_red;
+			}
+		}
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+			color: $theme-gradient-1_orange;
+		}
+		.current_page_item > a::after,
+		.current-menu-item > a::after,
+		.current_page_ancestor > a::after,
+		.current-menu-ancestor > a::after {
+			background-color: $theme-gradient-1_orange;
+		}
+		button.dropdown-toggle {
+			.dropdown-icon .dropdown-symbol {
+				color: $theme-gradient-1_red;
+			}
+			&.toggled-on {
+				.dropdown-icon {
+					background-color: $theme-gradient-1_red !important;
+				}
+			}
+		}
+		#Kalender {
+			.widgettitle {
+				background: $theme-gradient-1_red_02;
+				border-color: $theme-gradient-1_red;
+			}
+			table {
+				thead {
+					tr {
+						td {
+							a {
+								svg {
+									color: $theme-gradient-1_orange;
+								}
+							}
+						}
+					}
+				}
+				tbody {
+					background: $theme-gradient-1;
+				}
+			}
+		}
+		/*------------------------------------------------------
+		# Profile Widget
+		  ------------------------------------------------------*/
+		#circle-widget-area-1 .um .um-form {
+			background: $theme-gradient-1_red;
+
+			.um-misc-with-img {
+				color: $theme-gradient-1_orange;
+
+				&:hover {
+					color: $theme-gradient-1_red;
+				}
+				.um-misc-img a:hover {
+					color: $theme-gradient-1_red;
+				}
+			}
+			.sub-menu {
+				li {
+					border-color: $theme-gradient-1_orange;
+
+					&:hover {
+						border-color: $theme-gradient-1_red;
+					}
+				}
+			}
+			.dropdown-toggle {
+				color: $theme-gradient-1_red;
+			}
+			.form-login {
+				.um-field-checkbox.active:not(.um-field-radio-state-disabled) i {
+					color: $theme-gradient-1_red;
+				}
+				input[type="submit"].um-button {
+					background: $theme-gradient-1;
+				}
+				.um-field-error {
+					background: $theme-gradient-1_red_02;
+					border: 1px solid $theme-gradient-1_red;
+
+					.um-field-arrow {
+						color: $theme-gradient-1_red;
+					}
+				}
+			}
+		}
+		@media screen and (min-width: $query__large) {
+			#circle-widget-area-1 .um .um-form {
+				background: $theme-gradient-1;
+			}
+		}
+	}
+	/*------------------------------------------------------
+	# SU Post Loops
+	  ------------------------------------------------------*/
+	#content article {
+		.theme-gradient-1 {
+			.headline-3 {
+				background: $theme-gradient-1_red_02;
+				border-color: $theme-gradient-1_red;
+			}
+			.pagination span svg {
+				color: $theme-gradient-1_orange !important;
+			}
+			.su-post-inner {
+				border: 1px solid $theme-gradient-1_red;
+
+				.su-post-link {
+					background: url('http://kea-circles.siavonbulow.dk/wp-content/uploads/2018/04/gradient-1.png');
+
+					&:hover {
+						background: $theme-gradient-1;
+					}
+					.su-post-excerpt-icon svg {
+						color: $theme-gradient-1_orange;
+					}
+				}
+			}
+			.circle-loop_list {
+				background: $theme-gradient-1;
+
+				.su-list-post-btn svg {
+					color: $theme-gradient-1_orange;
+				}
+			}
+		}
+		.circle-theme-3 {
+			background: $theme-gradient-1;
+
+			.circle-inner {
+			}
+		}
+	}
+
+	/*----------------------------------------------------------
+	# Gradients 2
+	  ----------------------------------------------------------*/
+	&.theme-gradient-2 {
+		p a {
+			color: $theme-gradient-2_blue;
+
+			&:hover {
+				color: $theme-gradient-2_green;
+			}
+			&:visited {
+				color: $theme-gradient-2_green;
+
+				&:hover {
+					color: $theme-gradient-2_blue;
+				}
+			}
+		}
+		.su-button.circle-btn-default {
+			background: $theme-gradient-2 !important;
+
+			span {
+				color:$theme-gradient-2_blue !important;
+
+				svg {
+					color:$theme-gradient-2_green !important;
+				}
+			}
+			&:hover {
+				span {
+					color:$theme-gradient-2_green !important;
+
+					svg {
+						color:$theme-gradient-2_blue !important;
+					}
+				}
+			}
+		}
+		.main-navigation ul li ul li {
+			border-left: 4px solid $theme-gradient-2_green;
+
+			&:hover {
+				border-color: $theme-gradient-2_blue;
+			}
+		}
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+			color: $theme-gradient-2_green;
+		}
+		.current_page_item > a::after,
+		.current-menu-item > a::after,
+		.current_page_ancestor > a::after,
+		.current-menu-ancestor > a::after {
+			background-color: $theme-gradient-2_green;
+		}
+		button.dropdown-toggle {
+			.dropdown-icon .dropdown-symbol {
+				color: $theme-gradient-2_blue;
+			}
+			&.toggled-on {
+				.dropdown-icon {
+					background-color: $theme-gradient-2_blue !important;
+				}
+			}
+		}
+		#Kalender {
+			.widgettitle {
+				background: $theme-gradient-2_blue_02;
+				border-color: $theme-gradient-2_blue;
+			}
+			table {
+				thead {
+					tr {
+						td {
+							a {
+								svg {
+									color: $theme-gradient-2_green;
+								}
+							}
+						}
+					}
+				}
+				tbody {
+					background: $theme-gradient-2;
+				}
+			}
+		}
+		/*------------------------------------------------------
+		# Profile Widget
+		  ------------------------------------------------------*/
+		#circle-widget-area-1 .um .um-form {
+			background: $theme-gradient-2_blue;
+
+			.um-misc-with-img {
+				color: $theme-gradient-2_green;
+
+				&:hover {
+					color: $theme-gradient-2_blue;
+				}
+				.um-misc-img a:hover {
+					color: $theme-gradient-2_blue;
+				}
+			}
+			.sub-menu {
+				li {
+					border-color: $theme-gradient-2_green;
+
+					&:hover {
+						border-color: $theme-gradient-2_blue;
+					}
+				}
+			}
+			.dropdown-toggle {
+				color: $theme-gradient-2_blue;
+			}
+		}
+		@media screen and (min-width: $query__large) {
+			#circle-widget-area-1 .um .um-form {
+				background: $theme-gradient-2;
+			}
+		}
+	}
+	/*------------------------------------------------------
+	# SU Post Loops
+	  ------------------------------------------------------*/
+	#content article {
+		.theme-gradient-2 {
+			.headline-3 {
+				background: $theme-gradient-2_blue_02;
+				border-color: $theme-gradient-2_blue;
+			}
+			.pagination span svg {
+				color: $theme-gradient-2_green !important;
+			}
+			.su-post-inner {
+				border: 1px solid $theme-gradient-2_blue;
+
+				.su-post-link {
+					background: url('http://kea-circles.siavonbulow.dk/wp-content/uploads/2018/04/gradient-2.png');
+
+					&:hover {
+						background: $theme-gradient-2;
+					}
+					.su-post-excerpt-icon svg {
+						color: $theme-gradient-2_green;
+					}
+				}
+			}
+			.circle-loop_list {
+				background: $theme-gradient-2;
+
+				.su-list-post-btn svg {
+					color: $theme-gradient-2_green;
+				}
+			}
+		}
+		.circle-theme-3 {
+			background: $theme-gradient-1;
+
+			.circle-inner {
+			}
+		}
+	}
+
+	/*----------------------------------------------------------
+	# Gradients 3
+	  ----------------------------------------------------------*/
+	&.theme-gradient-3 {
+		p a {
+			color: $theme-gradient-3_purple;
+
+			&:hover {
+				color: $theme-gradient-3_magenta;
+			}
+			&:visited {
+				color: $theme-gradient-3_magenta;
+
+				&:hover {
+					color: $theme-gradient-3_purple;
+				}
+			}
+		}
+		.su-button.circle-btn-default {
+			background: $theme-gradient-3 !important;
+
+			span {
+				color:$theme-gradient-3_purple !important;
+
+				svg {
+					color:$theme-gradient-3_magenta !important;
+				}
+			}
+			&:hover {
+				span {
+					color:$theme-gradient-3_magenta !important;
+
+					svg {
+						color:$theme-gradient-3_purple !important;
+					}
+				}
+			}
+		}
+		.main-navigation ul li ul li {
+			border-left: 4px solid $theme-gradient-3_magenta;
+
+			&:hover {
+				border-color: $theme-gradient-3_purple;
+			}
+		}
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+			color: $theme-gradient-3_magenta;
+		}
+		.current_page_item > a::after,
+		.current-menu-item > a::after,
+		.current_page_ancestor > a::after,
+		.current-menu-ancestor > a::after {
+			background-color: $theme-gradient-3_magenta;
+		}
+		button.dropdown-toggle {
+			.dropdown-icon .dropdown-symbol {
+				color: $theme-gradient-3_purple;
+			}
+			&.toggled-on {
+				.dropdown-icon {
+					background-color: $theme-gradient-3_purple !important;
+				}
+			}
+		}
+		#Kalender {
+			.widgettitle {
+				background: $theme-gradient-3_purple_02;
+				border-color: $theme-gradient-3_purple;
+			}
+			table {
+				thead {
+					tr {
+						td {
+							a {
+								svg {
+									color: $theme-gradient-3_magenta;
+								}
+							}
+						}
+					}
+				}
+				tbody {
+					background: $theme-gradient-3;
+				}
+			}
+		}
+		/*------------------------------------------------------
+		# Profile Widget
+		  ------------------------------------------------------*/
+		#circle-widget-area-1 .um .um-form {
+			background: $theme-gradient-3_purple;
+
+			.um-misc-with-img {
+				color: $theme-gradient-3_magenta;
+
+				&:hover {
+					color: $theme-gradient-3_purple;
+				}
+				.um-misc-img a:hover {
+						color: $theme-gradient-3_purple;
+				}
+			}
+			.sub-menu {
+				li {
+					border-color: $theme-gradient-3_magenta;
+
+					&:hover {
+						border-color: $theme-gradient-3_purple;
+					}
+				}
+			}
+			.dropdown-toggle {
+				color: $theme-gradient-3_purple;
+			}
+		}
+		@media screen and (min-width: $query__large) {
+			#circle-widget-area-1 .um .um-form {
+				background: $theme-gradient-3;
+			}
+		}
+	}
+	/*------------------------------------------------------
+	# SU Post Loops
+	  ------------------------------------------------------*/
+	#content article {
+		.theme-gradient-3 {
+			.headline-3 {
+				background: $theme-gradient-3_purple_02;
+				border-color: $theme-gradient-3_purple;
+			}
+			.pagination span svg {
+				color: $theme-gradient-3_magenta !important;
+			}
+			.su-post-inner {
+				border: 1px solid $theme-gradient-3_purple;
+
+				.su-post-link {
+					background: url('http://kea-circles.siavonbulow.dk/wp-content/uploads/2018/04/gradient-3.png');
+
+					&:hover {
+						background: $theme-gradient-3;
+					}
+					.su-post-excerpt-icon svg {
+						color: $theme-gradient-3_magenta;
+					}
+				}
+			}
+			.circle-loop_list {
+				background: $theme-gradient-3;
+
+				.su-list-post-btn svg {
+					color: $theme-gradient-3_magenta;
+				}
+			}
+		}
+		.circle-theme-3 {
+			background: $theme-gradient-1;
+
+			.circle-inner {
+			}
+		}
+	}
+
+
+}

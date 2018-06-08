@@ -1,0 +1,34 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+}
+
+.su-button.circle-btn-default {
+	padding: 4px !important;
+	border: none !important;
+	border-radius: 10px !important;
+
+	span {
+		background-color: $theme-dark__background-header !important;
+		display: flex !important;
+		margin: 0 !important;
+		padding: 14px 20px!important;
+		font-size: 100% !important;
+		font-weight: 700 !important;
+		line-height: 32px !important;
+		text-align: left !important;
+		text-transform: uppercase !important;
+		border: none !important;
+		border-radius: 8px !important;
+
+		svg {
+			width: 1em !important;
+			padding: 5px 16px 5px 0 !important;
+			font-size: 1.33333333em !important;
+			line-height: .75em !important;
+			vertical-align: -.225em !important;
+		}
+	}
+}

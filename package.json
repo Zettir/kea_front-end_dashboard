@@ -1,0 +1,39 @@
+{
+  "name": "kea_front-end_dashboard",
+  "version": "0.0.1",
+  "description": "This is a exams project. Front End Elective, Spring 2018, 3. Semester - KEA",
+  "main": "index.js",
+  "scripts": {
+    "concat-css": "cat ../source/*.css > ../source/css/style.css",
+    "minifycss": "postcss ../source/css/style.css --use cssnano -d ../docs/css/",
+    "fixcss": "npm run concat-css && npm run minifycss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zettir/kea_front-end_dashboard.git"
+  },
+  "author": "Niels Gerdes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zettir/kea_front-end_dashboard/issues"
+  },
+  "homepage": "https://github.com/Zettir/kea_front-end_dashboard#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.2",
+    "browser-sync": "^2.17.6",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-image": "^2.7.2",
+    "gulp-jshint": "^2.0.2",
+    "gulp-newer": "^1.3.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "jshint": "^2.9.4",
+    "postcss-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "node-sass": "^4.7.2",
+    "npm": "^5.7.1"
+  }
+}

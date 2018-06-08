@@ -1,0 +1,20 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $theme-dark__text-main;
+	font-family: $font__main;
+	/* -- #NG -- */
+	font-size: 14px;
+	@media screen and (min-width: $query__small) {
+		font-size: 16px;
+	}
+	/* --------- */
+	line-height: $font__line-height-body;
+}
+
+@import "headings";
+
+@import "copy";
