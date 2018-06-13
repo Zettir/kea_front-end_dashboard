@@ -1,3 +1,8 @@
+.input-container {
+    width: 100%;
+    position: relative;
+	margin-bottom: 20px;
+}
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -15,12 +20,119 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+    background: transparent;
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+	line-height: 1.2;
+	border: none;
+    border-bottom: 2px solid;
+	outline: none;
 
+	.theme-dark & {
+		border-color: $theme-dark__background-header-border;
+	}
+	.theme-light & {
+		border-color: $theme-light__background-header-border;
+	}
 	&:focus {
 		color: $color__text-input-focus;
+	}
+	&:focus + .input-focus::after {
+		color: $color__text-input;
+		font-size: 0.8em;
+		top: -6px;
+	}  
+	&:focus + .input-focus::before {
+		width: 100%;
+	}
+	&.has-value + .input-focus::after {
+		color: $color__text-input;
+		font-size: 0.8em;
+		top: -6px;
+	}
+}
+.input-focus {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+	pointer-events: none;
+	
+	&::before {
+		background: $color_purple;
+		background: linear-gradient(to right, $color_cyan, $color_magenta);
+		content: "";
+		display: block;
+		width: 0;
+		height: 2px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transition: all 0.4s;
+	}
+	&::after {
+		content: attr(data-placeholder);
+		display: block;
+		width: 100%;
+		padding-left: 10px;
+		font-size: 15px;
+		color: $color__text-input-focus;
+		line-height: 1.2;
+		position: absolute;
+		top: 14px;
+		left: 0px;
+		transition: all 0.4s;
+	}
+}
+.signin {
+    width: 100%;
+	display: block;
+	margin: 0 auto 10px;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
+
+	.signin-focus {
+		position: absolute;
+		z-index: -1;
+		width: 300%;
+		height: 100%;
+		background: $color_purple;
+		background: linear-gradient(to left, $color_cyan, $color_magenta, $color_cyan, $color_magenta);
+		top: 0;
+		left: -100%;
+		transition: all 0.4s;
+
+	}
+	&:hover .signin-focus {
+		left: 0;
+	}
+	.signin-btn {
+		background: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 50px;
+		padding: 0 20px;
+		color: #fff;
+		font-size: 15px;
+		font-weight: 700;
+		line-height: 1.2;
+		text-transform: uppercase;
+		border: none;
+	}
+}
+.signup {
+	text-align: center;
+
+	.signup-btn {
+		display: inline;
 	}
 }
 

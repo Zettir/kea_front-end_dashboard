@@ -7,11 +7,15 @@ html {
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
-
 body {
-	background: $theme-dark__background-body; /* Fallback for when there is no custom background color defined. */
+	min-height: 100vh;
+	&.theme-dark {
+		background: $theme-dark__background-body;
+	}
+	&.theme-light {
+		background: $theme-light__background-body;
+	}
 }
-
 hr {
 	background-color: $color__background-hr;
 	border: 0;

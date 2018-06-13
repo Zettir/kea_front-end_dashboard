@@ -1,9 +1,9 @@
+$color_purple: #6666cc;
+$color_magenta: magenta;
+$color_cyan: cyan;
+
 $color__main-menu-link: #fff;
 $color__main-menu-link-hover: midnightblue;
-
-$color__lavender: rgba(130,110,200,1);
-$color__lavender-light: rgba(170,150,240,1);
-$color__lavender-dark: rgba(50,40,100,1);
 
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
@@ -13,10 +13,10 @@ $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
+$color__text-input-focus: #aaa;
+$color__link: $color_purple;
+$color__link-visited: $color_magenta;
+$color__link-hover: $color_cyan;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -24,48 +24,12 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-/*--------------------------------------------------------------
-# Theme Colors
---------------------------------------------------------------*/
-$theme-gradient-1_orange: rgba(255,153,102,1);
-$theme-gradient-1_red: rgba(204,102,153,1);
-$theme-gradient-2_green: rgba(102,204,153,1);
-$theme-gradient-2_blue: rgba(102,153,255,1);
-$theme-gradient-3_magenta: rgba(204,102,204,1);
-$theme-gradient-3_purple: rgba(102,102,204,1);
-
-$theme-gradient-1_orange_05: rgba(255,153,102,.5);
-$theme-gradient-1_red_05: rgba(204,102,153,.5);
-$theme-gradient-2_green_05: rgba(102,204,153,.5);
-$theme-gradient-2_blue_05: rgba(102,153,255,.5);
-$theme-gradient-3_magenta_05: rgba(204,102,204,.5);
-$theme-gradient-3_purple_05: rgba(102,102,204,.5);
-
-$theme-gradient-1_orange_02: rgba(255,153,102,.2);
-$theme-gradient-1_red_02: rgba(204,102,153,.2);
-$theme-gradient-2_green_02: rgba(102,204,153,.2);
-$theme-gradient-2_blue_02: rgba(102,153,255,.2);
-$theme-gradient-3_magenta_02: rgba(204,102,204,.2);
-$theme-gradient-3_purple_02: rgba(102,102,204,.2);
-
-/*--------------------------------------------------------------
-# Theme Gradients
---------------------------------------------------------------*/
-$theme-gradient-1: linear-gradient(to right, $theme-gradient-1_orange 0%, $theme-gradient-1_red 100%);
-$theme-gradient-2: linear-gradient(to right, $theme-gradient-2_green 0%, $theme-gradient-2_blue 100%);
-$theme-gradient-3: linear-gradient(to right, $theme-gradient-3_magenta 0%, $theme-gradient-3_purple 100%);
-
-/*--------------------------------------------------------------
-# Theme Dark
---------------------------------------------------------------*/
 $theme-dark__background-body: #222;
 $theme-dark__background-header: #262626;
-$theme-dark__background-header-menu: #2c2c2c;
+$theme-dark__background-header-border: #2c2c2c;
 $theme-dark__text-main: #f1f1f1;
 
-/*--------------------------------------------------------------
-# Theme Light
---------------------------------------------------------------*/
 $theme-light__background-body: #f5f5f5;
 $theme-light__background-header: #fff;
+$theme-light__background-header-border: #eeeeee;
 $theme-light__text-main: #404040;

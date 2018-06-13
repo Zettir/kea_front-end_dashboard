@@ -225,7 +225,7 @@
 	-webkit-box-ordinal-group: 2;
 	order: 1;
 }
-@media only screen and (min-width:480px) {
+@media only screen and (min-width: $query__small) {
 	.odr-sm-1 {
 		order: 1;
 	}
@@ -421,7 +421,7 @@
 		order: 1;
 	}
 }
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: $query__medium) {
 	.odr-md-1 {
 		order: 1;
 	}
@@ -617,7 +617,7 @@
 		order: 1;
 	}
 }
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width: $query__large) {
 	.odr-lg-1 {
 		order: 1;
 	}
@@ -813,7 +813,7 @@
 		order: 1;
 	}
 }
-@media only screen and (min-width:1280px) {
+@media only screen and (min-width: $query__xLarge) {
 	.odr-xl-1 {
 		order: 1;
 	}

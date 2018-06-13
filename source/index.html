@@ -4,20 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Distortion - FooBar</title>
+    <title>FooBar - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Signika:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<body>
-    <h1 id="name">Name</h1>
-    <h2 id="queue">
-        <span id="number"></span>
-        <span id="text">In Queue</span>
-    </h2>
-    <ul id="container"></ul>
+<body class="flex theme-dark login">
+    <header class="col-xl-3">
+        <h1><span id="name">Name</span> Manager</h1>
+        <section id="login">
+            <h2>Welcome to Staff Login</h2>
+            <form id="form_id" method="post" name="myform">
+                <div class="input-container" data-validate = "Valid email is: a@b.c">
+                    <input id="username" class="input-content" type="text" name="username" />
+                    <span class="input-focus" data-placeholder="Username"></span>
+                </div>
+                <div class="input-container" data-validate="Enter password">
+                    <span class="btn-show-pass">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                    <input id="password" class="input-content" type="password" name="password" />
+                    <span class="input-focus" data-placeholder="Password"></span>
+                </div>
+                <div class="signin">
+                    <div class="signin-focus"></div>
+                    <input id="submit" class="signin-btn" type="button" value="Login" onclick="validate()" />
+                </div>
+                <p class="signup">
+                    Don’t have an account?
+                    <a class="signup-btn" href="#">Sign Up</a>
+                </p>
+            </form>
+            <p><b class="note">Note : </b>For this demo use following username and password. <br/><b class="valid">User Name : Formget<br/>Password : formget#123</b></p>
+        </section>
+        <section id="user">
+            <div id="profile">
+                <img id="bartenderImages" />
+                <h3 id="bartenderName"></h3>
+                <p id="bartenderStatus"></p>
+            </div>
+            <nav id="team">
+                <ul class="content"></ul>
+            </nav>
+        </section>
+    </header>
+    <section id="main" class="col-xl-9">
+        <h2 id="queue">
+            <span id="number"></span>
+            <span id="text">In Queue</span>
+        </h2>
+        <ul id="container"></ul>
+    </section>
     <template id="template">
        <li class="inQueue"><p><span class="queueNumber"></span></p></li>
     </template>
     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/functions.js"></script>
 </body>
 </html>

@@ -1,17 +1,15 @@
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
+.theme-dark {
 	color: $theme-dark__text-main;
+}
+.theme-light {
+	color: $theme-light__text-main;
+}
+body, button, input, select, optgroup, textarea {
 	font-family: $font__main;
-	/* -- #NG -- */
 	font-size: 14px;
-	@media screen and (min-width: $query__small) {
+	@include breakpoint(small) {
 		font-size: 16px;
 	}
-	/* --------- */
 	line-height: $font__line-height-body;
 }
 

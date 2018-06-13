@@ -1,7 +1,3 @@
-/* ----------------------------------------------------------
-	CSS | Reset
-   ---------------------------------------------------------- */
-
 * {
 	box-sizing: border-box;
 	outline: none;
@@ -30,7 +26,7 @@ nav ul {
 	list-style: none;
 }
 
-/* Text-level semantics
+/*	Text-level semantics
    ---------------------------------------------------------- */
 b, strong {
 	font-weight: bolder;
@@ -101,13 +97,13 @@ hr {
 	padding: 0;
 }
 
-/* Embedded content
+/*	Embedded content
    ---------------------------------------------------------- */
 img {
 	border-style: none;
 }
 
-/* Forms
+/*	Forms
    ---------------------------------------------------------- */
 button, input, optgroup, select, textarea {
 	font-family: inherit;
@@ -186,13 +182,13 @@ textarea {
 	font: inherit;
 }
 
-/* Interactive
+/*	Interactive
    ---------------------------------------------------------- */
 summary {
 	display: list-item;
 }
 
-/* Misc
+/*	Misc
    ---------------------------------------------------------- */
 template,
 [hidden],
