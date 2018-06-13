@@ -12,10 +12,22 @@ async function loop() {
     let bar = json.bar;
 
     document.querySelector( '#name' ).textContent = bar.name;
+
+    if ( document.querySelector( 'body' ).classList.contains( 'peter' ) ) {
+        console.log(json.bartenders[0].name);
+        document.querySelector( '#bartenderName' ).textContent = json.bartenders[0].name;
+    }
+    if ( document.querySelector( 'body' ).classList.contains( 'jonas' ) ) {
+        console.log(json.bartenders[1].name);
+        document.querySelector( '#bartenderName' ).textContent = json.bartenders[1].name;
+    }
+    if ( document.querySelector( 'body' ).classList.contains( 'martin' ) ) {
+        console.log(json.bartenders[2].name);
+        document.querySelector( '#bartenderName' ).textContent = json.bartenders[2].name;
+    }
+
+
+    // Set interval - data changes every 30 seconds
+    setInterval(loop,30000);
 }    
 
-// Set interval - data changes every 10 seconds
-setInterval(loop,10000);
-
-// Read the script when DOM is downloaded
-document.addEventListener("DOMContentLoaded", loop);

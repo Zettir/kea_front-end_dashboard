@@ -6,11 +6,13 @@
 let form = document.querySelectorAll('.input-content');
 
 form.forEach( function( target ) {
+    if( form.value != "" ) {
+        target.classList.add("has-value");
+    }
+    else {
+        target.classList.remove( 'has-value' );
+    }
     target.addEventListener( 'blur', function( input ) {
-        console.log( input.currentTarget.value );
-        console.log( input.target );
-        console.log( input.target.classlist );
-
         if( input.currentTarget.value != "" ) {
             target.classList.add("has-value");
         }
@@ -20,18 +22,33 @@ form.forEach( function( target ) {
     });
 });
 
+/* --------------------------------------------------------------
+	Validate Login
+   -------------------------------------------------------------- */
 function validate(){
     let attempt = 3;
     let username = document.getElementById( 'username' ).value;
     let password = document.getElementById( 'password' ).value;
 
-    if ( username == 'Formget' && password == 'formget#123'){
-        alert ('Login successfully');
-        // window.location = 'success.html'; // Redirecting to other page.
-        document.querySelector( 'body' ).classList.remove( 'login' );
-        document.querySelector( '#main' ).style.display = 'flex';
-        document.querySelector( '#user' ).style.display = 'flex';
-        document.querySelector( '#login' ).style.display = 'none';
+    if ( username == 'peter' && password == 'peter#123'){
+        alert ('Login successfully, welcome Peter.');
+        document.querySelector( 'body' ).classList.add( 'peter' );
+        loop();
+        display();
+        return false;
+    }
+    if ( username == 'jonas' && password == 'jonas#123'){
+        alert ('Login successfully, welcome Jonas.');
+        document.querySelector( 'body' ).classList.add( 'jonas' );
+        loop();
+        display();
+        return false;
+    }
+    if ( username == 'martin' && password == 'martin#123'){
+        alert ('Login successfully, welcome Martin.');
+        document.querySelector( 'body' ).classList.add( 'martin' );
+        loop();
+        display();
         return false;
     }
     else{
@@ -45,5 +62,12 @@ function validate(){
             document.getElementById( 'submit' ).disabled = true;
             return false;
         }
+    }
+
+    function display() {
+        document.querySelector( 'body' ).classList.remove( 'login' );
+        document.querySelector( '#main' ).style.display = 'flex';
+        document.querySelector( '#user' ).style.display = 'flex';
+        document.querySelector( '#login' ).style.display = 'none';
     }
 }
