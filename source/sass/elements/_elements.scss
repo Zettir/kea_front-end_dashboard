@@ -43,5 +43,24 @@ svg {
 		color: $color_cyan;
 	}
 }
+.error {
+	color: $color_magenta;
+}
 
-@import "tables";
+::-webkit-scrollbar {
+	width: 2px;
+	top: 0;
+	left: 0;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: none; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, $color_cyan, $color_magenta); 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(to top, $color_cyan, $color_magenta);
+}

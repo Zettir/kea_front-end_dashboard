@@ -6,10 +6,7 @@
 }
 body, button, input, select, optgroup, textarea {
 	font-family: $font__main;
-	font-size: 14px;
-	@include breakpoint(small) {
-		font-size: 16px;
-	}
+	font-size: 16px;
 	line-height: $font__line-height-body;
 }
 

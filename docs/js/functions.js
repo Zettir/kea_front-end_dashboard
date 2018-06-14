@@ -6,8 +6,6 @@ async function loop() {
     let data = FooBar.getData();
     let json = JSON.parse(data);
 
-    console.log(json);
-
 /* --------------------------------------------------------------
 	Main Variables
    -------------------------------------------------------------- */
@@ -24,10 +22,15 @@ async function loop() {
 	Main Infomations
    -------------------------------------------------------------- */
     document.querySelector( '#name' ).textContent = bar.name;
-    document.querySelector( '#queue .number' ).textContent = queue.length;
 
+/* --------------------------------------------------------------
+	Runing Functions
+   -------------------------------------------------------------- */
     user();
     beers( beerTypes );
+    inQueue( queue );
+    inServing( serving, bartenders );
+    customersSwitch();
 
 /* --------------------------------------------------------------
 	Find User
@@ -75,7 +78,7 @@ async function loop() {
     }
 
 /* --------------------------------------------------------------
-	Create Profile
+	Profile
    -------------------------------------------------------------- */
     function profile( bartender ) {
         document.querySelector( '#bartenderName' ).textContent = bartenders[ bartender ].name;
@@ -120,59 +123,132 @@ async function loop() {
     }
 
 /* --------------------------------------------------------------
-	Create Team
+	Team
    -------------------------------------------------------------- */
-   function team( bartenders, bartender ) {
+    function team( bartenders, bartender ) {
         let template = document.querySelector( '#bartenderTemplate' );
-        let teamContainer = document.querySelector('.bartenders' );
+        let container = document.querySelector('.bartenders' );
         
-        teamContainer.innerHTML = '';
+        container.innerHTML = '';
 
         if ( bartender != 0 ) {
             let clone = template.cloneNode(true).content;
             clone.querySelector( '.bartenderImages' ).classList.add( 'color-1' );
             clone.querySelector( '.bartenderName' ).textContent = bartenders[0].name;
             clone.querySelector( '.bartenderStatus' ).innerHTML = '<span>Status: </span>' + bartenders[0].status;
-            teamContainer.appendChild( clone );
+            container.appendChild( clone );
         }
         if ( bartender != 1 ) {
             let clone = template.cloneNode(true).content;
             clone.querySelector( '.bartenderImages' ).classList.add( 'color-2' );
             clone.querySelector( '.bartenderName' ).textContent = bartenders[1].name;
             clone.querySelector( '.bartenderStatus' ).innerHTML = '<span>Status: </span>' + bartenders[1].status;
-            teamContainer.appendChild( clone );
+            container.appendChild( clone );
         }
         if ( bartender != 2 ) {
             let clone = template.cloneNode(true).content;
             clone.querySelector( '.bartenderImages' ).classList.add( 'color-3' );
             clone.querySelector( '.bartenderName' ).textContent = bartenders[2].name;
             clone.querySelector( '.bartenderStatus' ).innerHTML = '<span>Status: </span>' + bartenders[2].status;
-            teamContainer.appendChild( clone );
+            container.appendChild( clone );
         }
+    }
+
+/* --------------------------------------------------------------
+	Customers In Queue
+   -------------------------------------------------------------- */
+    function inQueue( customers ) {
+
+        document.querySelector( '.in-queue-switch .number' ).textContent = customers.length;
+
+        let template = document.querySelector( '#in-queue-template' );
+        let container = document.querySelector('#in-queue' );
+
+        container.innerHTML = '';
+
+        customers.forEach( function( customer ) {
+            let clone = template.cloneNode(true).content;
+            clone.querySelector( '.customer-id .number' ).textContent = '#' + customer.id;
+            clone.querySelector( '.order .number' ).textContent = customer.order.length;
+            container.appendChild( clone );
+        });
+    }
+
+/* --------------------------------------------------------------
+	Customers In Serving
+   -------------------------------------------------------------- */
+    function inServing( customers, bartenders ) {
+        document.querySelector( '.in-serving-switch .number' ).textContent = customers.length;
+
+        let template = document.querySelector( '#in-serving-template' );
+        let container = document.querySelector('#in-serving' );
+
+        container.innerHTML = '';
+
+        customers.forEach( function( customer ) {
+            let clone = template.cloneNode(true).content;
+            clone.querySelector( '.customer-id .number' ).textContent = '#' + customer.id;
+            if ( bartenders[0].servingCustomer == customer.id ) {
+                clone.querySelector( '.bartender-images' ).classList.add( 'color-1' );
+                clone.querySelector( '.bartender-name' ).textContent = bartenders[0].name;
+            }
+            if ( bartenders[1].servingCustomer == customer.id ) {
+                clone.querySelector( '.bartender-images' ).classList.add( 'color-2' );
+                clone.querySelector( '.bartender-name' ).textContent = bartenders[1].name;
+            }
+            if ( bartenders[2].servingCustomer == customer.id ) {
+                clone.querySelector( '.bartender-images' ).classList.add( 'color-3' );
+                clone.querySelector( '.bartender-name' ).textContent = bartenders[2].name;
+            }
+            container.appendChild( clone );
+        });
+    }
+
+/* --------------------------------------------------------------
+	Switch Content - In Queue / In Serving
+   -------------------------------------------------------------- */
+    function customersSwitch() {
+        let inQueueSwitch = document.querySelector( '.in-queue-switch' );
+        let inServingSwitch = document.querySelector( '.in-serving-switch' );
+        let inQueueContainer = document.querySelector( '#in-queue' );
+        let inServingContainer = document.querySelector( '#in-serving' );
+
+        inQueueSwitch.addEventListener( 'click', function() {
+            if ( inServingSwitch.classList.contains('active') ) {
+                inServingSwitch.classList.remove( 'active' );
+                inServingContainer.classList.remove( 'active' );
+                inQueueSwitch.classList.add( 'active' );
+                inQueueContainer.classList.add( 'active' );
+            }
+        });
+        inServingSwitch.addEventListener( 'click', function() {
+            if ( inQueueSwitch.classList.contains('active') ) {
+                inQueueSwitch.classList.remove( 'active' );
+                inQueueContainer.classList.remove( 'active' );
+                inServingSwitch.classList.add( 'active' );
+                inServingContainer.classList.add( 'active' );
+            }
+        });
     }
 
 /* --------------------------------------------------------------
 	Beer Types
    -------------------------------------------------------------- */
     function beers( types ) {
-        console.log( types );
         taps( tapsInfo, types );
     }
 
 /* --------------------------------------------------------------
-	Create Taps
+	Taps
    -------------------------------------------------------------- */
     function taps( taps, types ) {
         let template = document.querySelector( '#tap-template' );
-        let tapContainer = document.querySelector('#taps' );
+        let container = document.querySelector('#taps' );
 
-        tapContainer.innerHTML = '';
-
-        console.log( taps );
+        container.innerHTML = '';
 
         taps.forEach( function( tap ) {
             let clone = template.cloneNode(true).content;
-
             if ( tap.beer == types[0].name ) {
                 clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[0].label + '")';
             }
@@ -203,18 +279,15 @@ async function loop() {
             if ( tap.beer == types[9].name ) {
                 clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[9].label + '")';
             }
-
             clone.querySelector( '.tap-name .number' ).textContent = '#' + (tap.id+1);
             clone.querySelector( '.beer-name .name' ).textContent = tap.beer;
-
-
-            tapContainer.appendChild( clone );
+            container.appendChild( clone );
         });
     }
 
 
     // Set interval - data changes every 30 seconds
-    setInterval(loop,60000);
+    setInterval( loop, 30000 );
 }
 
 window.addEventListener(`DOMContentLoaded`, loop);

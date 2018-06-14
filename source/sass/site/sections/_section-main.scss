@@ -47,6 +47,8 @@
 				.title {
 					padding: 16px 20px 12px;
 					position: relative;
+					cursor: pointer;
+
 					.theme-dark &:first-child, .theme-dark &:last-child {
 						border-color: $theme-dark__background-header-sub;
 					}
@@ -67,7 +69,11 @@
 						position: absolute;
 						bottom: 0;
 						left: 0;
-					}	
+					}
+					.number {
+						margin-left: 10px;
+						font-weight: 600;
+					}
 				}
 			}
 			#in-queue, #in-serving {
@@ -86,6 +92,74 @@
 				}
 				&.active {
 					display: flex;
+				}
+				.customer {
+					padding: 20px;
+					border-bottom: 2px solid;
+					.theme-dark & {
+						background: $theme-dark__background-header;
+						border-color: $theme-dark__background-header-sub;
+					}
+					.theme-light & {
+						background: $theme-light__background-header;
+						border-color: $theme-light__background-header-sub;
+					}
+					&:last-child {
+						border-bottom: none;
+					}
+					.customer-images {
+						width: 40px;
+						height: 40px;
+						margin-right: 10px;
+						padding: 10px;
+						border-radius: 50%;
+						.theme-dark & {
+							background: $theme-dark__background-header-sub;
+							color: $theme-dark__text-main;
+						}
+						.theme-light & {
+							background: $theme-light__background-header-sub;
+							color: $theme-light__text-main;
+						}
+					}
+					.customer-info {
+						.customer-id {
+							margin: auto;
+							.text {
+								font-weight: 300;
+							}
+						}
+					}
+					.bartender-info {
+						.bartender-name {
+							margin: auto;
+						}
+						.bartender-images {
+							width: 40px;
+							height: 40px;
+							margin-left: 10px;
+						}
+					}
+					.order-info {
+						.order {
+							margin: auto;
+						}
+						.order-images {
+							width: 40px;
+							height: 40px;
+							margin-left: 10px;
+							padding: 10px;
+							border-radius: 50%;
+							.theme-dark & {
+								background: $theme-dark__background-header-sub;
+								color: $theme-dark__text-main;
+							}
+							.theme-light & {
+								background: $theme-light__background-header-sub;
+								color: $theme-light__text-main;
+							}
+						}
+					}
 				}
 			}
 		}

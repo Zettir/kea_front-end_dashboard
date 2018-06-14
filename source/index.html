@@ -71,23 +71,66 @@
     <section id="main-section" class="col-xl-9 flex col">
         <header class="flex between-xs">
             <h2 id="queue" class="flex">
-                <span class="text">Customers in queue</span>
-                <span class="number"></span>
+                <span class="text">Customers served in session</span>
+                <span class="number error">00</span>
             </h2>
             <h2 id="time">
                 <span class="text">In</span>
-                <span class="number">10 hours</span>
+                <span class="number error">00h 00m</span>
                 <span class="text">the bar closes</span>
             </h2>
         </header>
         <div class="container flex">
             <div id="customers" class="col-xs-8">
-                <nav class="flex">
-                    <h2 class="title col-xs-6 active">Serviced Customers at the moment</h2>
-                    <h2 class="title col-xs-6">Customers in queue</h2>
+                <nav id="customers-switch" class="flex">
+                    <h2 class="title in-queue-switch flex col-xs-6 active">
+                        <span class="text">Customers in queue</span>
+                        <span class="number"></span>
+                    </h2>
+                    <h2 class="title in-serving-switch col-xs-6">
+                        <span class="text">Serviced Customers</span>
+                        <span class="number"></span>
+                    </h2>
                 </nav>
-                <ul id="in-serving" class="active"></ul>
-                <ul id="in-queue"></ul>
+                <ul id="in-queue" class="flex col active"></ul>
+                <template id="in-queue-template">
+                    <li class="customer">
+                        <div class="flex between-xs">
+                            <div class="customer-info flex center-xs">
+                                <i class="customer-images fa fa-child"></i>
+                                <h3 class="customer-id">
+                                    <span class="text">Customer ID</span>
+                                    <span class="number"></span>
+                                </h3>
+                            </div>
+                            <div class="order-info flex center-xs">
+                                <h3 class="order">
+                                    <span class="number"></span>
+                                    <span class="text">× beer</span>
+                                </h3>
+                                <i class="order-images fa fa-beer"></i>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+                <ul id="in-serving" class="flex col"></ul>
+                <template id="in-serving-template">
+                    <li class="customer">
+                        <div class="flex between-xs">
+                            <div class="customer-info flex center-xs">
+                                <i class="customer-images fa fa-child"></i>
+                                <h3 class="customer-id">
+                                    <span class="text">Customer ID</span>
+                                    <span class="number"></span>
+                                </h3>
+                            </div>
+                            <div class="bartender-info flex center-xs">
+                                <h4 class="bartender-name"></h4>
+                                <i class="bartender-images fas fa-user-circle"></i>
+                            </div>
+                        </div>
+                    </li>
+                </template>
             </div>
             <div id="beer-taps" class="col-xs-4">
                 <h2 class="title">Taps in the bar</h2>
