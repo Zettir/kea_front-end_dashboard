@@ -174,34 +174,34 @@ async function loop() {
             let clone = template.cloneNode(true).content;
 
             if ( tap.beer == types[0].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[0].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[0].label + '")';
             }
             if ( tap.beer == types[1].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[1].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[1].label + '")';
             }
             if ( tap.beer == types[2].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[2].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[2].label + '")';
             }
             if ( tap.beer == types[3].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[3].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[3].label + '")';
             }
             if ( tap.beer == types[4].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[4].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[4].label + '")';
             }
             if ( tap.beer == types[5].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[5].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[5].label + '")';
             }
             if ( tap.beer == types[6].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[6].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[6].label + '")';
             }
             if ( tap.beer == types[7].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[7].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[7].label + '")';
             }
             if ( tap.beer == types[8].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[8].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[8].label + '")';
             }
             if ( tap.beer == types[9].name ) {
-                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[9].label + '")';
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("images/img/' + types[9].label + '")';
             }
 
             clone.querySelector( '.tap-name .number' ).textContent = '#' + (tap.id+1);
