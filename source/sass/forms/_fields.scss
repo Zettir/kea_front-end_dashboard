@@ -31,10 +31,10 @@ textarea {
 	outline: none;
 
 	.theme-dark & {
-		border-color: $theme-dark__background-header-border;
+		border-color: $theme-dark__background-header-sub;
 	}
 	.theme-light & {
-		border-color: $theme-light__background-header-border;
+		border-color: $theme-light__background-header-sub;
 	}
 	&:focus {
 		color: $color__text-input-focus;
@@ -130,6 +130,7 @@ textarea {
 }
 .signup {
 	text-align: center;
+	margin-bottom: 10px;
 
 	.signup-btn {
 		display: inline;

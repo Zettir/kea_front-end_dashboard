@@ -2,7 +2,6 @@
 /* --------------------------------------------------------------
 	Focus on Input
    -------------------------------------------------------------- */
-
 let form = document.querySelectorAll('.input-content');
 
 form.forEach( function( target ) {
@@ -25,13 +24,14 @@ form.forEach( function( target ) {
 /* --------------------------------------------------------------
 	Validate Login
    -------------------------------------------------------------- */
-function validate(){
+function validate() {
     let attempt = 3;
     let username = document.getElementById( 'username' ).value;
     let password = document.getElementById( 'password' ).value;
 
     if ( username == 'peter' && password == 'peter#123'){
         alert ('Login successfully, welcome Peter.');
+        document.querySelector( 'body' ).classList.add( 'color-1' );
         document.querySelector( 'body' ).classList.add( 'peter' );
         loop();
         display();
@@ -39,6 +39,7 @@ function validate(){
     }
     if ( username == 'jonas' && password == 'jonas#123'){
         alert ('Login successfully, welcome Jonas.');
+        document.querySelector( 'body' ).classList.add( 'color-2' );
         document.querySelector( 'body' ).classList.add( 'jonas' );
         loop();
         display();
@@ -46,6 +47,7 @@ function validate(){
     }
     if ( username == 'martin' && password == 'martin#123'){
         alert ('Login successfully, welcome Martin.');
+        document.querySelector( 'body' ).classList.add( 'color-3' );
         document.querySelector( 'body' ).classList.add( 'martin' );
         loop();
         display();
@@ -67,7 +69,7 @@ function validate(){
     function display() {
         document.querySelector( 'body' ).classList.remove( 'login' );
         document.querySelector( '#main' ).style.display = 'flex';
-        document.querySelector( '#user' ).style.display = 'flex';
+        document.querySelector( '#user' ).style.display = 'block';
         document.querySelector( '#login' ).style.display = 'none';
     }
 }

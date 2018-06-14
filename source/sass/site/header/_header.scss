@@ -5,29 +5,32 @@ header {
 	.login & {
 		height: 100%;
 		margin: auto;
+		#user {
+			display: none;
+		}
 	}
 	.theme-dark.login & {
-		border: 2px solid $theme-dark__background-header-border;
+		border: 2px solid $theme-dark__background-header-sub;
 	}
 	.theme-light.login & {
-		border: 2px solid $theme-light__background-header-border;
+		border: 2px solid $theme-light__background-header-sub;
 	}
 	.theme-dark & {
 		background: $theme-dark__background-header;
-		border-right: 2px solid $theme-dark__background-header-border;
+		border-right: 2px solid $theme-dark__background-header-sub;
 	}
 	.theme-light & {
 		background: $theme-light__background-header;
-		border-right: 2px solid $theme-light__background-header-border;
+		border-right: 2px solid $theme-light__background-header-sub;
 	}
 	h1 {
 		padding: 22px 40px 18px;
 		text-align: center;
 		.theme-dark & {
-			border-bottom: 2px solid $theme-dark__background-header-border;
+			border-bottom: 2px solid $theme-dark__background-header-sub;
 		}
 		.theme-light & {
-			border-bottom: 2px solid $theme-light__background-header-border;
+			border-bottom: 2px solid $theme-light__background-header-sub;
 		}
 		#name {
 			font-weight: 600;
@@ -40,5 +43,133 @@ header {
 	}
 	#login {
 		padding: 20px;
+	}
+	#user {
+		#profile {
+			#info {
+				display: flex;
+				justify-content: center;
+				padding: 20px 20px 10px;
+
+				#loguot, #settings {
+					display: flex;
+					width: 40px;
+					height: 40px;
+					margin: auto 0;
+					font-size: 1.4em;
+					border-radius: 50%;
+					.theme-dark & {
+						background: $theme-dark__background-header-sub;
+					}
+					.theme-light & {
+						background: $theme-light__background-header-sub;
+					}
+					.color-1 &:visited {
+						color: $color_purple;
+					}
+					.color-2 &:visited {
+						color: $color_magenta;
+					}
+					.color-3 &:visited {
+						color: $color_cyan;
+					}
+					.color-1 &:hover {
+						color: $color_cyan;
+					}
+					.color-2 &:hover {
+						color: $color_cyan;
+					}
+					.color-3 &:hover {
+						color: $color_magenta;
+					}
+				}
+				#bartenderImages {
+					width: 80px;
+					height: 80px;
+					margin: 0 30px;
+					.color-1 & {
+						color: $color_purple;
+					}
+					.color-2 & {
+						color: $color_magenta;
+					}
+					.color-3 & {
+						color: $color_cyan;
+					}
+				}
+			}
+			#bartenderName {
+				margin-bottom: 0.1em;
+				font-size: 1.2em;
+				font-weight: 400;
+				text-align: center;
+			}
+			#bartenderStatus {
+				font-size: 0.8em;
+				font-weight: 400;
+				text-align: center;
+				text-transform: uppercase;
+				span {
+					font-weight: 600;
+				}
+			}
+			#bartenderDetail {
+				padding: 20px;
+				.icon {
+					display: flex;
+					width: 60px;
+					height: 60px;
+					margin: 0 auto 10px;
+					font-size: 2em;
+					border-radius: 50%;
+					.theme-dark & {
+						background: $theme-dark__background-header-sub;
+						color: $theme-dark__text-main;
+					}
+					.theme-light & {
+						background: $theme-light__background-header-sub;
+						color: $theme-light__text-main;
+					}
+				}
+				.text {
+					text-align: center;
+				}
+			}
+			.theme-dark & {
+				border-bottom: 2px solid $theme-dark__background-header-sub;
+			}
+			.theme-light & {
+				border-bottom: 2px solid $theme-light__background-header-sub;
+			}	
+		}
+		#team {
+			padding: 10px;
+			.bartender {
+				padding: 10px;
+				.bartenderImages {
+					width: 60px;
+					height: 60px;
+					margin-right: 10px;
+				}
+				.bartenderInfo {
+					flex-grow: 1;
+					.bartenderName {
+						margin-bottom: 0.1em;
+						font-size: 1.2em;
+						font-weight: 400;
+						text-align: left;
+					}
+					.bartenderStatus {
+						font-size: 0.8em;
+						font-weight: 400;
+						text-align: left;
+						text-transform: uppercase;
+						span {
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
 	}
 }

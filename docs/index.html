@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FooBar - Dashboard</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Signika:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -19,9 +20,6 @@
                     <span class="input-focus" data-placeholder="Username"></span>
                 </div>
                 <div class="input-container" data-validate="Enter password">
-                    <span class="btn-show-pass">
-                        <i class="fa fa-eye"></i>
-                    </span>
                     <input id="password" class="input-content" type="password" name="password" />
                     <span class="input-focus" data-placeholder="Password"></span>
                 </div>
@@ -34,16 +32,39 @@
                     <a class="signup-btn" href="#">Sign Up</a>
                 </p>
             </form>
-            <p><i><b>Note: </b>For this project use following username and password.</i><br/><b>User Name:</b> jonas, peter or martin<br/><b>Password:</b> jonas#123, peter#123 or martin#123</p>
+            <p><i><b>Note: </b>For this project use following username and password.</i><br/><b>User Name:</b> peter, jonas or martin<br/><b>Password:</b> peter#123, jonas#123 or martin#123</p>
         </section>
         <section id="user">
             <div id="profile">
-                <img id="bartenderImages" />
+                <div id="info">
+                    <a id="loguot" href="index.html"><i class="fas fa-lock"></i></a>
+                    <i id="bartenderImages" class="fas fa-user-circle"></i>
+                    <a id="settings" href="javascript:void(0)"><i class="fas fa-cog"></i></a>
+                </div>
                 <h3 id="bartenderName"></h3>
                 <p id="bartenderStatus"></p>
+                <div id="bartenderDetail" class="flex">
+                    <div id="bartenderStatusDetail" class="col-xs-6">
+                        <div class="icon"></div>
+                        <p class="text"></p>
+                    </div>
+                    <div id="bartenderServingCustomer" class="col-xs-6">
+                        <div class="icon"></div>
+                        <p class="text"></p>
+                    </div>
+                </div>
             </div>
             <nav id="team">
-                <ul class="content"></ul>
+                <ul class="bartenders"></ul>
+                <template id="bartenderTemplate">
+                    <li class="bartender flex">
+                        <i class="bartenderImages fas fa-user-circle"></i>
+                        <div class="bartenderInfo flex col center-xs">
+                            <h4 class="bartenderName"></h4>
+                            <p class="bartenderStatus"></p>
+                        </div>
+                    </li>
+                </template>
             </nav>
         </section>
     </header>
@@ -58,7 +79,7 @@
        <li class="inQueue"><p><span class="queueNumber"></span></p></li>
     </template>
     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
-    <script src="js/login.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

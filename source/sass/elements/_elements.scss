@@ -31,5 +31,17 @@ img {
 figure {
 	margin: 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
+svg {
+	margin: auto;
+	&.color-1 {
+		color: $color_purple;
+	}
+	&.color-2 {
+		color: $color_magenta;
+	}
+	&.color-3 {
+		color: $color_cyan;
+	}
+}
 
 @import "tables";
