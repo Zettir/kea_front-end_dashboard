@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body class="flex theme-dark login">
-    <header class="col-xl-3">
+    <header id="main-header" class="col-xl-3">
         <h1><span id="name">Name</span> Manager</h1>
         <section id="login">
             <h2>Welcome to Staff Login</h2>
@@ -68,16 +68,50 @@
             </nav>
         </section>
     </header>
-    <section id="main" class="col-xl-9">
-        <h2 id="queue">
-            <span id="number"></span>
-            <span id="text">In Queue</span>
-        </h2>
-        <ul id="container"></ul>
+    <section id="main-section" class="col-xl-9 flex col">
+        <header class="flex between-xs">
+            <h2 id="queue" class="flex">
+                <span class="text">Customers in queue</span>
+                <span class="number"></span>
+            </h2>
+            <h2 id="time">
+                <span class="text">In</span>
+                <span class="number">10 hours</span>
+                <span class="text">the bar closes</span>
+            </h2>
+        </header>
+        <div class="container flex">
+            <div id="customers" class="col-xs-8">
+                <nav class="flex">
+                    <h2 class="title col-xs-6 active">Serviced Customers at the moment</h2>
+                    <h2 class="title col-xs-6">Customers in queue</h2>
+                </nav>
+                <ul id="in-serving" class="active"></ul>
+                <ul id="in-queue"></ul>
+            </div>
+            <div id="beer-taps" class="col-xs-4">
+                <h2 class="title">Taps in the bar</h2>
+                <ul id="taps" class="flex col"></ul>
+                <template id="tap-template">
+                    <li class="tap">
+                        <div class="flex">
+                            <div class="tap-images"></div>
+                            <div class="tap-info flex col center-xs">
+                                <h3 class="tap-name">
+                                    <span class="text">Tap</span>
+                                    <span class="number"></span>
+                                </h3>
+                                <p class="beer-name">
+                                    <span class="text">Beer:</span>
+                                    <span class="name"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+            </div>
+        </div>
     </section>
-    <template id="template">
-       <li class="inQueue"><p><span class="queueNumber"></span></p></li>
-    </template>
     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/login.js"></script>

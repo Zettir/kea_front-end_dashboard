@@ -3,7 +3,7 @@
 	Project URI: https://github.com/Zettir/kea_front-end_dashboard
 	Author: Niels Krahmer Gerdes
 	Description: This is a exams project. Front End Elective, Spring 2018, 3. Semester - KEA
-	Version: 0.0.2
+	Version: 0.0.3
 	License: GNU General Public License v2 or later
    --------------------------------------------------------------
 	TABLE OF CONTENTS
@@ -1280,26 +1280,24 @@ body, button, input, select, optgroup, textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: "Signika", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Ariel, sans-serif;
+	text-align: left;
+}
+
+h1, h2 {
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 30px;
 }
 
 h1 {
-	font-size: 1em;
-	font-weight: 300;
 	text-transform: uppercase;
 }
 
-h2 {
-	font-size: 2em;
+h3, h4 {
+	margin-bottom: 0.1em;
+	font-size: 1.2em;
+	font-weight: 400;
 	line-height: 1.2em;
-}
-
-h3 {
-	font-size: 1.588em;
-	line-height: 1.2em;
-}
-
-h4 {
-	font-size: 1.26em;
 }
 
 h5 {
@@ -2091,61 +2089,71 @@ button.dropdown-toggle:hover .dropdown-icon .dropdown-symbol {
 	overflow: hidden;
 }
 
-.login header {
+#main-header {
+	height: 100vh;
+	border-right: 2px solid;
+}
+
+.login #main-header {
 	height: 100%;
 	margin: auto;
 }
 
-.login header #user {
+.login #main-header #user {
 	display: none;
 }
 
-.theme-dark.login header {
+.theme-dark.login #main-header {
 	border: 2px solid #2c2c2c;
 }
 
-.theme-light.login header {
+.theme-light.login #main-header {
 	border: 2px solid #eeeeee;
 }
 
-.theme-dark header {
+.theme-dark #main-header {
 	background: #262626;
-	border-right: 2px solid #2c2c2c;
+	border-color: #2c2c2c;
 }
 
-.theme-light header {
+.theme-light #main-header {
 	background: #fff;
-	border-right: 2px solid #eeeeee;
+	border-color: #eeeeee;
 }
 
-header h1 {
-	padding: 22px 40px 18px;
+#main-header h1 {
+	padding: 16px 20px 12px;
 	text-align: center;
 }
 
-.theme-dark header h1 {
+.theme-dark #main-header h1 {
 	border-bottom: 2px solid #2c2c2c;
 }
 
-.theme-light header h1 {
+.theme-light #main-header h1 {
 	border-bottom: 2px solid #eeeeee;
 }
 
-header h1 #name {
+#main-header h1 #name {
 	font-weight: 600;
 }
 
-header h2 {
+#main-header #login {
+	padding: 20px;
+}
+
+#main-header #login h2 {
 	font-size: 1.2em;
 	font-weight: 500;
 	padding: 16px 10px;
 }
 
-header #login {
-	padding: 20px;
+#main-header #user {
+	height: calc(100vh - 60px);
+	overflow-y: scroll;
 }
 
-header #user #profile #info {
+#main-header #user #profile #info {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-pack: center;
@@ -2153,7 +2161,7 @@ header #user #profile #info {
 	padding: 20px 20px 10px;
 }
 
-header #user #profile #info #loguot, header #user #profile #info #settings {
+#main-header #user #profile #info #loguot, #main-header #user #profile #info #settings {
 	display: -ms-flexbox;
 	display: flex;
 	width: 40px;
@@ -2163,79 +2171,76 @@ header #user #profile #info #loguot, header #user #profile #info #settings {
 	border-radius: 50%;
 }
 
-.theme-dark header #user #profile #info #loguot, .theme-dark header #user #profile #info #settings {
+.theme-dark #main-header #user #profile #info #loguot, .theme-dark #main-header #user #profile #info #settings {
 	background: #2c2c2c;
 }
 
-.theme-light header #user #profile #info #loguot, .theme-light header #user #profile #info #settings {
+.theme-light #main-header #user #profile #info #loguot, .theme-light #main-header #user #profile #info #settings {
 	background: #eeeeee;
 }
 
-.color-1 header #user #profile #info #loguot:visited, .color-1 header #user #profile #info #settings:visited {
+.color-1 #main-header #user #profile #info #loguot:visited, .color-1 #main-header #user #profile #info #settings:visited {
 	color: #6666cc;
 }
 
-.color-2 header #user #profile #info #loguot:visited, .color-2 header #user #profile #info #settings:visited {
+.color-2 #main-header #user #profile #info #loguot:visited, .color-2 #main-header #user #profile #info #settings:visited {
 	color: magenta;
 }
 
-.color-3 header #user #profile #info #loguot:visited, .color-3 header #user #profile #info #settings:visited {
+.color-3 #main-header #user #profile #info #loguot:visited, .color-3 #main-header #user #profile #info #settings:visited {
 	color: cyan;
 }
 
-.color-1 header #user #profile #info #loguot:hover, .color-1 header #user #profile #info #settings:hover {
+.color-1 #main-header #user #profile #info #loguot:hover, .color-1 #main-header #user #profile #info #settings:hover {
 	color: cyan;
 }
 
-.color-2 header #user #profile #info #loguot:hover, .color-2 header #user #profile #info #settings:hover {
+.color-2 #main-header #user #profile #info #loguot:hover, .color-2 #main-header #user #profile #info #settings:hover {
 	color: cyan;
 }
 
-.color-3 header #user #profile #info #loguot:hover, .color-3 header #user #profile #info #settings:hover {
+.color-3 #main-header #user #profile #info #loguot:hover, .color-3 #main-header #user #profile #info #settings:hover {
 	color: magenta;
 }
 
-header #user #profile #info #bartenderImages {
+#main-header #user #profile #info #bartenderImages {
 	width: 80px;
 	height: 80px;
 	margin: 0 30px;
 }
 
-.color-1 header #user #profile #info #bartenderImages {
+.color-1 #main-header #user #profile #info #bartenderImages {
 	color: #6666cc;
 }
 
-.color-2 header #user #profile #info #bartenderImages {
+.color-2 #main-header #user #profile #info #bartenderImages {
 	color: magenta;
 }
 
-.color-3 header #user #profile #info #bartenderImages {
+.color-3 #main-header #user #profile #info #bartenderImages {
 	color: cyan;
 }
 
-header #user #profile #bartenderName {
-	margin-bottom: 0.1em;
-	font-size: 1.2em;
-	font-weight: 400;
+#main-header #user #profile #bartenderName {
 	text-align: center;
 }
 
-header #user #profile #bartenderStatus {
+#main-header #user #profile #bartenderStatus {
 	font-size: 0.8em;
 	font-weight: 400;
 	text-align: center;
 	text-transform: uppercase;
 }
 
-header #user #profile #bartenderStatus span {
+#main-header #user #profile #bartenderStatus span {
 	font-weight: 600;
 }
 
-header #user #profile #bartenderDetail {
+#main-header #user #profile #bartenderDetail {
 	padding: 20px;
 }
 
-header #user #profile #bartenderDetail .icon {
+#main-header #user #profile #bartenderDetail .icon {
 	display: -ms-flexbox;
 	display: flex;
 	width: 60px;
@@ -2245,74 +2250,243 @@ header #user #profile #bartenderDetail .icon {
 	border-radius: 50%;
 }
 
-.theme-dark header #user #profile #bartenderDetail .icon {
+.theme-dark #main-header #user #profile #bartenderDetail .icon {
 	background: #2c2c2c;
 	color: #f1f1f1;
 }
 
-.theme-light header #user #profile #bartenderDetail .icon {
+.theme-light #main-header #user #profile #bartenderDetail .icon {
 	background: #eeeeee;
 	color: #404040;
 }
 
-header #user #profile #bartenderDetail .text {
+#main-header #user #profile #bartenderDetail .text {
 	text-align: center;
 }
 
-.theme-dark header #user #profile {
+.theme-dark #main-header #user #profile {
 	border-bottom: 2px solid #2c2c2c;
 }
 
-.theme-light header #user #profile {
+.theme-light #main-header #user #profile {
 	border-bottom: 2px solid #eeeeee;
 }
 
-header #user #team {
+#main-header #user #team {
 	padding: 10px;
 }
 
-header #user #team .bartender {
+#main-header #user #team .bartender {
 	padding: 10px;
 }
 
-header #user #team .bartender .bartenderImages {
+#main-header #user #team .bartender .bartenderImages {
 	width: 60px;
 	height: 60px;
 	margin-right: 10px;
 }
 
-header #user #team .bartender .bartenderInfo {
+#main-header #user #team .bartender .bartenderInfo {
 	-ms-flex-positive: 1;
 	    flex-grow: 1;
 }
 
-header #user #team .bartender .bartenderInfo .bartenderName {
-	margin-bottom: 0.1em;
-	font-size: 1.2em;
-	font-weight: 400;
-	text-align: left;
-}
-
-header #user #team .bartender .bartenderInfo .bartenderStatus {
+#main-header #user #team .bartender .bartenderInfo .bartenderStatus {
 	font-size: 0.8em;
 	font-weight: 400;
 	text-align: left;
 	text-transform: uppercase;
 }
 
-header #user #team .bartender .bartenderInfo .bartenderStatus span {
+#main-header #user #team .bartender .bartenderInfo .bartenderStatus span {
 	font-weight: 600;
 }
 
 /* --------------------------------------------------------------
     Sections
    -------------------------------------------------------------- */
-#main {
+#main-section {
 	min-height: 100vh;
 }
 
-.login #main {
+.login #main-section {
 	display: none;
+}
+
+#main-section header {
+	padding: 16px 40px 12px;
+	border-right: none;
+	border-bottom: 2px solid;
+}
+
+.theme-dark #main-section header {
+	background: #262626;
+	border-color: #2c2c2c;
+}
+
+.theme-light #main-section header {
+	background: #fff;
+	border-color: #eeeeee;
+}
+
+#main-section header #queue .number {
+	margin-left: 10px;
+}
+
+#main-section header #time .number {
+	margin: 0 6px;
+}
+
+#main-section .container {
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
+	max-height: calc(100vh - 60px);
+	padding: 10px;
+}
+
+#main-section .container #customers {
+	padding: 5px;
+}
+
+#main-section .container #customers nav {
+	margin: 5px 5px 0;
+	border: 2px solid;
+	border-bottom: none;
+}
+
+.theme-dark #main-section .container #customers nav {
+	background: #262626;
+	border-color: #2c2c2c;
+}
+
+.theme-light #main-section .container #customers nav {
+	background: #fff;
+	border-color: #eeeeee;
+}
+
+#main-section .container #customers nav .title {
+	padding: 16px 20px 12px;
+	position: relative;
+}
+
+.theme-dark #main-section .container #customers nav .title:first-child, .theme-dark #main-section .container #customers nav .title:last-child {
+	border-color: #2c2c2c;
+}
+
+.theme-light #main-section .container #customers nav .title:first-child, .theme-light #main-section .container #customers nav .title:last-child {
+	border-color: #eeeeee;
+}
+
+#main-section .container #customers nav .title:first-child {
+	border-right: 1px solid;
+}
+
+#main-section .container #customers nav .title:last-child {
+	border-left: 1px solid;
+}
+
+#main-section .container #customers nav .title.active::after {
+	background: linear-gradient(to right, cyan, magenta);
+	content: "";
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#main-section .container #customers #in-queue, #main-section .container #customers #in-serving {
+	display: none;
+	height: calc(100% - 70px);
+	margin: 0 5px 5px;
+	border: 2px solid;
+	overflow-y: scroll;
+}
+
+.theme-dark #main-section .container #customers #in-queue, .theme-dark #main-section .container #customers #in-serving {
+	background: #262626;
+	border-color: #2c2c2c;
+}
+
+.theme-light #main-section .container #customers #in-queue, .theme-light #main-section .container #customers #in-serving {
+	background: #fff;
+	border-color: #eeeeee;
+}
+
+#main-section .container #customers #in-queue.active, #main-section .container #customers #in-serving.active {
+	display: -ms-flexbox;
+	display: flex;
+}
+
+#main-section .container #beer-taps {
+	padding: 5px;
+}
+
+#main-section .container #beer-taps .title {
+	padding: 16px 20px 12px;
+	margin: 5px 5px 0;
+	border: 2px solid;
+	border-bottom: none;
+}
+
+.theme-dark #main-section .container #beer-taps .title {
+	background: #262626;
+	border-color: #2c2c2c;
+}
+
+.theme-light #main-section .container #beer-taps .title {
+	background: #fff;
+	border-color: #eeeeee;
+}
+
+#main-section .container #beer-taps #taps {
+	height: calc(100% - 70px);
+	margin: 0 5px 5px;
+	border: 2px solid;
+	overflow-y: scroll;
+}
+
+.theme-dark #main-section .container #beer-taps #taps {
+	background: #262626;
+	border-color: #2c2c2c;
+}
+
+.theme-light #main-section .container #beer-taps #taps {
+	background: #fff;
+	border-color: #eeeeee;
+}
+
+#main-section .container #beer-taps #taps .tap {
+	min-height: 90px;
+	padding: 20px;
+	border-bottom: 2px solid;
+}
+
+.theme-dark #main-section .container #beer-taps #taps .tap {
+	background: #262626;
+	border-color: #2c2c2c;
+}
+
+.theme-light #main-section .container #beer-taps #taps .tap {
+	background: #fff;
+	border-color: #eeeeee;
+}
+
+#main-section .container #beer-taps #taps .tap:first-child {
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
+}
+
+#main-section .container #beer-taps #taps .tap:last-child {
+	border-bottom: none;
+}
+
+#main-section .container #beer-taps #taps .tap .tap-images {
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	border-radius: 50%;
 }
 
 /* --------------------------------------------------------------

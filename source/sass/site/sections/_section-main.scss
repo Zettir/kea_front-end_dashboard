@@ -1,7 +1,150 @@
-#main {
+#main-section {
 	min-height: 100vh;
-
 	.login & {
 		display: none;
+	}
+	header {
+		padding: 16px 40px 12px;
+		border-right: none;
+		border-bottom: 2px solid;
+		.theme-dark & {
+			background: $theme-dark__background-header;
+			border-color: $theme-dark__background-header-sub;
+		}
+		.theme-light & {
+			background: $theme-light__background-header;
+			border-color: $theme-light__background-header-sub;
+		}
+		#queue {
+			.number {
+				margin-left: 10px;
+			}
+		}
+		#time {
+			.number {
+				margin: 0 6px;
+			}
+		}
+	}
+	.container {
+		flex-grow: 1;
+		max-height: calc(100vh - 60px);
+		padding: 10px;
+		#customers {
+			padding: 5px;
+			nav {
+				margin: 5px 5px 0;
+				border: 2px solid;
+				border-bottom: none;
+				.theme-dark & {
+					background: $theme-dark__background-header;
+					border-color: $theme-dark__background-header-sub;
+				}
+				.theme-light & {
+					background: $theme-light__background-header;
+					border-color: $theme-light__background-header-sub;
+				}
+				.title {
+					padding: 16px 20px 12px;
+					position: relative;
+					.theme-dark &:first-child, .theme-dark &:last-child {
+						border-color: $theme-dark__background-header-sub;
+					}
+					.theme-light &:first-child, .theme-light &:last-child {
+						border-color: $theme-light__background-header-sub;
+					}
+					&:first-child {
+						border-right: 1px solid;
+					}
+					&:last-child {
+						border-left: 1px solid;
+					}
+					&.active::after {
+						background: linear-gradient(to right, $color_cyan, $color_magenta);
+						content: "";
+						width: 100%;
+						height: 2px;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+					}	
+				}
+			}
+			#in-queue, #in-serving {
+				display: none;
+				height: calc(100% - 70px);
+				margin: 0 5px 5px;
+				border: 2px solid;
+				overflow-y: scroll;
+				.theme-dark & {
+					background: $theme-dark__background-header;
+					border-color: $theme-dark__background-header-sub;
+				}
+				.theme-light & {
+					background: $theme-light__background-header;
+					border-color: $theme-light__background-header-sub;
+				}
+				&.active {
+					display: flex;
+				}
+			}
+		}
+		#beer-taps {
+			padding: 5px;
+			.title {
+				padding: 16px 20px 12px;
+				margin: 5px 5px 0;
+				border: 2px solid;
+				border-bottom: none;
+				.theme-dark & {
+					background: $theme-dark__background-header;
+					border-color: $theme-dark__background-header-sub;
+				}
+				.theme-light & {
+					background: $theme-light__background-header;
+					border-color: $theme-light__background-header-sub;
+				}
+			}
+			#taps {
+				height: calc(100% - 70px);
+				margin: 0 5px 5px;
+				border: 2px solid;
+				overflow-y: scroll;
+				.theme-dark & {
+					background: $theme-dark__background-header;
+					border-color: $theme-dark__background-header-sub;
+				}
+				.theme-light & {
+					background: $theme-light__background-header;
+					border-color: $theme-light__background-header-sub;
+				}
+				.tap {
+					min-height: 90px;
+					padding: 20px;
+					border-bottom: 2px solid;
+					.theme-dark & {
+						background: $theme-dark__background-header;
+						border-color: $theme-dark__background-header-sub;
+					}
+					.theme-light & {
+						background: $theme-light__background-header;
+						border-color: $theme-light__background-header-sub;
+					}
+					&:first-child {
+						flex-grow: 1;
+					}
+					&:last-child {
+						border-bottom: none;
+					}
+					.tap-images {
+						background-size: cover;
+						width: 50px;
+						height: 50px;
+						margin-right: 10px;
+						border-radius: 50%; 
+					}
+				}
+			}
+		}
 	}
 }

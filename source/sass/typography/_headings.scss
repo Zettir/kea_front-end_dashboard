@@ -1,22 +1,21 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: $font__sub;
+	text-align: left;
 }
-h1 {
+h1, h2 {
 	font-size: 1em;
 	font-weight: 300;
+	line-height: 30px;
+}
+h1 {
 	text-transform: uppercase;
 }
-h2 {
-	font-size: 2em;
+h3, h4 {
+    margin-bottom: 0.1em;
+    font-size: 1.2em;
+    font-weight: 400;
 	line-height: 1.2em;
-}
-h3 {
-	font-size: 1.588em;
-	line-height: 1.2em;
-}
-h4 {
-	font-size: 1.26em;
 }
 h5 {
 	font-size: 1em;

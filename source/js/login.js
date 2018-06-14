@@ -68,7 +68,7 @@ function validate() {
 
     function display() {
         document.querySelector( 'body' ).classList.remove( 'login' );
-        document.querySelector( '#main' ).style.display = 'flex';
+        document.querySelector( '#main-section' ).style.display = 'flex';
         document.querySelector( '#user' ).style.display = 'block';
         document.querySelector( '#login' ).style.display = 'none';
     }

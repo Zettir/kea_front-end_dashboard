@@ -1,7 +1,9 @@
 .scroll-off {
 	overflow: hidden;
 }
-header {
+#main-header {
+	height: 100vh;
+	border-right: 2px solid;
 	.login & {
 		height: 100%;
 		margin: auto;
@@ -17,14 +19,14 @@ header {
 	}
 	.theme-dark & {
 		background: $theme-dark__background-header;
-		border-right: 2px solid $theme-dark__background-header-sub;
+		border-color: $theme-dark__background-header-sub;
 	}
 	.theme-light & {
 		background: $theme-light__background-header;
-		border-right: 2px solid $theme-light__background-header-sub;
+		border-color: $theme-light__background-header-sub;
 	}
 	h1 {
-		padding: 22px 40px 18px;
+		padding: 16px 20px 12px;
 		text-align: center;
 		.theme-dark & {
 			border-bottom: 2px solid $theme-dark__background-header-sub;
@@ -36,15 +38,17 @@ header {
 			font-weight: 600;
 		}
 	}
-	h2 {
-		font-size: 1.2em;
-		font-weight: 500;
-		padding: 16px 10px;
-	}
 	#login {
 		padding: 20px;
+		h2 {
+			font-size: 1.2em;
+			font-weight: 500;
+			padding: 16px 10px;
+		}
 	}
 	#user {
+		height: calc(100vh - 60px);
+		overflow-y: scroll;
 		#profile {
 			#info {
 				display: flex;
@@ -99,9 +103,6 @@ header {
 				}
 			}
 			#bartenderName {
-				margin-bottom: 0.1em;
-				font-size: 1.2em;
-				font-weight: 400;
 				text-align: center;
 			}
 			#bartenderStatus {
@@ -153,12 +154,6 @@ header {
 				}
 				.bartenderInfo {
 					flex-grow: 1;
-					.bartenderName {
-						margin-bottom: 0.1em;
-						font-size: 1.2em;
-						font-weight: 400;
-						text-align: left;
-					}
 					.bartenderStatus {
 						font-size: 0.8em;
 						font-weight: 400;

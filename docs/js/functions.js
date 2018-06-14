@@ -13,19 +13,21 @@ async function loop() {
    -------------------------------------------------------------- */
    let bar = json.bar;
    let bartenders = json.bartenders;
-   let beertypes = json.beertypes;
+   let beerTypes = json.beertypes;
    let queue = json.queue;
    let serving = json.serving;
    let storage = json.storage;
-   let taps = json.taps;
+   let tapsInfo = json.taps;
    let timestamp = json.timestamp;
 
 /* --------------------------------------------------------------
 	Main Infomations
    -------------------------------------------------------------- */
     document.querySelector( '#name' ).textContent = bar.name;
+    document.querySelector( '#queue .number' ).textContent = queue.length;
 
     user();
+    beers( beerTypes );
 
 /* --------------------------------------------------------------
 	Find User
@@ -147,15 +149,67 @@ async function loop() {
             clone.querySelector( '.bartenderStatus' ).innerHTML = '<span>Status: </span>' + bartenders[2].status;
             teamContainer.appendChild( clone );
         }
-        /*
-        bartenders.forEach( function( bartender ) {
+    }
+
+/* --------------------------------------------------------------
+	Beer Types
+   -------------------------------------------------------------- */
+    function beers( types ) {
+        console.log( types );
+        taps( tapsInfo, types );
+    }
+
+/* --------------------------------------------------------------
+	Create Taps
+   -------------------------------------------------------------- */
+    function taps( taps, types ) {
+        let template = document.querySelector( '#tap-template' );
+        let tapContainer = document.querySelector('#taps' );
+
+        tapContainer.innerHTML = '';
+
+        console.log( taps );
+
+        taps.forEach( function( tap ) {
             let clone = template.cloneNode(true).content;
 
-            clone.querySelector( '.bartenderName' ).textContent = bartender.name;
- 
-            teamContainer.appendChild( clone );
+            if ( tap.beer == types[0].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[0].label + '")';
+            }
+            if ( tap.beer == types[1].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[1].label + '")';
+            }
+            if ( tap.beer == types[2].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[2].label + '")';
+            }
+            if ( tap.beer == types[3].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[3].label + '")';
+            }
+            if ( tap.beer == types[4].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[4].label + '")';
+            }
+            if ( tap.beer == types[5].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[5].label + '")';
+            }
+            if ( tap.beer == types[6].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[6].label + '")';
+            }
+            if ( tap.beer == types[7].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[7].label + '")';
+            }
+            if ( tap.beer == types[8].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[8].label + '")';
+            }
+            if ( tap.beer == types[9].name ) {
+                clone.querySelector( '.tap-images' ).style.backgroundImage = 'url("../images/img/' + types[9].label + '")';
+            }
+
+            clone.querySelector( '.tap-name .number' ).textContent = '#' + (tap.id+1);
+            clone.querySelector( '.beer-name .name' ).textContent = tap.beer;
+
+
+            tapContainer.appendChild( clone );
         });
-        */
     }
 
 
