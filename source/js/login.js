@@ -29,26 +29,24 @@ function validate() {
     let username = document.getElementById( 'username' ).value;
     let password = document.getElementById( 'password' ).value;
 
-    if ( username == 'peter' && password == 'peter#123'){
-        alert ('Login successfully, welcome Peter.');
-        document.querySelector( 'body' ).classList.add( 'color-1' );
-        document.querySelector( 'body' ).classList.add( 'peter' );
+    if ( username == 'peter' && password == 'peter#123' ){
+        alert ( 'Login successfully, welcome Peter.' );
+        document.querySelector( 'body' ).classList.add( 'color-1', 'peter' );
         loop();
         display();
         return false;
     }
-    if ( username == 'jonas' && password == 'jonas#123'){
-        alert ('Login successfully, welcome Jonas.');
-        document.querySelector( 'body' ).classList.add( 'color-2' );
-        document.querySelector( 'body' ).classList.add( 'jonas' );
+    if ( username == 'jonas' && password == 'jonas#123' ){
+        alert ( 'Login successfully, welcome Jonas.' );
+        document.querySelector( 'body' ).classList.remove( 'theme-dark' );
+        document.querySelector( 'body' ).classList.add( 'theme-light', 'color-2', 'jonas' );
         loop();
         display();
         return false;
     }
-    if ( username == 'martin' && password == 'martin#123'){
-        alert ('Login successfully, welcome Martin.');
-        document.querySelector( 'body' ).classList.add( 'color-3' );
-        document.querySelector( 'body' ).classList.add( 'martin' );
+    if ( username == 'martin' && password == 'martin#123' ){
+        alert ( 'Login successfully, welcome Martin.' );
+        document.querySelector( 'body' ).classList.add( 'color-3', 'martin' );
         loop();
         display();
         return false;
@@ -56,7 +54,7 @@ function validate() {
     else{
         // Decrementing by one.
         attempt --;
-        alert('You have left '+attempt+' attempt');
+        alert( 'You have left ' + attempt + ' attempt' );
         // Disabling fields after 3 attempts.
         if( attempt == 0){
             document.getElementById( 'username' ).disabled = true;
