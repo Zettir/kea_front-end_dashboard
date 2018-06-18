@@ -6,6 +6,8 @@ async function loop() {
     let data = FooBar.getData();
     let json = JSON.parse(data);
 
+    console.log( json );
+
 /* --------------------------------------------------------------
 	Main Variables
    -------------------------------------------------------------- */
