@@ -135,6 +135,7 @@ async function loop() {
 
         if ( bartender != 0 ) {
             let clone = template.cloneNode(true).content;
+            
             clone.querySelector( '.bartenderImages' ).classList.add( 'color-1' );
             clone.querySelector( '.bartenderName' ).textContent = bartenders[0].name;
             clone.querySelector( '.bartenderStatus' ).innerHTML = '<span>Status: </span>' + bartenders[0].status;
