@@ -3,8 +3,7 @@
 See my project here: https://zettir.github.io/kea_front-end_dashboard/
 
 ### If you have trouble viewing the content.
-You can unblock the content in your browser.
-Select it in the address bar.
+You can unblock the content in your browser, just select it in the address bar.
 
 - **Chrome / Opera** in the right side of the address bar.
 - **Firefox** on the left side.
