@@ -1,10 +1,20 @@
 "use strict";
 
+/* --------------------------------------------------------------
+	Runing Functions
+   -------------------------------------------------------------- */
+customersSwitch();
+
+/* --------------------------------------------------------------
+	Loop
+   -------------------------------------------------------------- */
 let loops = 0;
 
 async function loop() {
     let data = FooBar.getData();
     let json = JSON.parse(data);
+
+    console.log( json );
 
 /* --------------------------------------------------------------
 	Main Variables
@@ -14,7 +24,7 @@ async function loop() {
    let beerTypes = json.beertypes;
    let queue = json.queue;
    let serving = json.serving;
-   let storage = json.storage;
+   // let storage = json.storage;
    let tapsInfo = json.taps;
    let timestamp = json.timestamp;
 
@@ -24,13 +34,12 @@ async function loop() {
     document.querySelector( '#name' ).textContent = bar.name;
 
 /* --------------------------------------------------------------
-	Runing Functions
+	Runing Functions in loop
    -------------------------------------------------------------- */
     user();
     beers( beerTypes );
     inQueue( queue );
     inServing( serving, bartenders );
-    customersSwitch();
 
 /* --------------------------------------------------------------
 	Find User
@@ -133,6 +142,7 @@ async function loop() {
 
         if ( bartender != 0 ) {
             let clone = template.cloneNode(true).content;
+            
             clone.querySelector( '.bartenderImages' ).classList.add( 'color-1' );
             clone.querySelector( '.bartenderName' ).textContent = bartenders[0].name;
             clone.querySelector( '.bartenderStatus' ).innerHTML = '<span>Status: </span>' + bartenders[0].status;
@@ -205,33 +215,6 @@ async function loop() {
     }
 
 /* --------------------------------------------------------------
-	Switch Content - In Queue / In Serving
-   -------------------------------------------------------------- */
-    function customersSwitch() {
-        let inQueueSwitch = document.querySelector( '.in-queue-switch' );
-        let inServingSwitch = document.querySelector( '.in-serving-switch' );
-        let inQueueContainer = document.querySelector( '#in-queue' );
-        let inServingContainer = document.querySelector( '#in-serving' );
-
-        inQueueSwitch.addEventListener( 'click', function() {
-            if ( inServingSwitch.classList.contains('active') ) {
-                inServingSwitch.classList.remove( 'active' );
-                inServingContainer.classList.remove( 'active' );
-                inQueueSwitch.classList.add( 'active' );
-                inQueueContainer.classList.add( 'active' );
-            }
-        });
-        inServingSwitch.addEventListener( 'click', function() {
-            if ( inQueueSwitch.classList.contains('active') ) {
-                inQueueSwitch.classList.remove( 'active' );
-                inQueueContainer.classList.remove( 'active' );
-                inServingSwitch.classList.add( 'active' );
-                inServingContainer.classList.add( 'active' );
-            }
-        });
-    }
-
-/* --------------------------------------------------------------
 	Beer Types
    -------------------------------------------------------------- */
     function beers( types ) {
@@ -288,6 +271,33 @@ async function loop() {
 
     // Set interval - data changes every 30 seconds
     setInterval( loop, 30000 );
+}
+
+/* --------------------------------------------------------------
+	Switch Content - In Queue / In Serving
+   -------------------------------------------------------------- */
+   function customersSwitch() {
+    let inQueueSwitch = document.querySelector( '.in-queue-switch' );
+    let inServingSwitch = document.querySelector( '.in-serving-switch' );
+    let inQueueContainer = document.querySelector( '#in-queue' );
+    let inServingContainer = document.querySelector( '#in-serving' );
+
+    inQueueSwitch.addEventListener( 'click', function() {
+        if ( inServingSwitch.classList.contains('active') ) {
+            inServingSwitch.classList.remove( 'active' );
+            inServingContainer.classList.remove( 'active' );
+            inQueueSwitch.classList.add( 'active' );
+            inQueueContainer.classList.add( 'active' );
+        }
+    });
+    inServingSwitch.addEventListener( 'click', function() {
+        if ( inQueueSwitch.classList.contains('active') ) {
+            inQueueSwitch.classList.remove( 'active' );
+            inQueueContainer.classList.remove( 'active' );
+            inServingSwitch.classList.add( 'active' );
+            inServingContainer.classList.add( 'active' );
+        }
+    });
 }
 
 window.addEventListener(`DOMContentLoaded`, loop);
